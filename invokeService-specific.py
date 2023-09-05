@@ -16,8 +16,8 @@ def dec2deg (dd) :
 	return str (d) + 'd ' + str (m) + "' " + str (s) + '"'
 
 
-#chartHost = '[GCP-CLOUD-RUN-URL]'
-chartHost = 'http://localhost:5000'
+chartHost = 'https://open-astro-web-service-ilhgu4omwq-uk.a.run.app'
+#chartHost = 'http://localhost:5000'
 
 def printChartFromDictionary (chart) :
 	print ("............ chart for ", chart['chartData']['name']," ............")
@@ -59,38 +59,6 @@ def getChart (filename) :
 		print ("Timeout Error:",errt.response.text)
 	return data
 
-# get the chart using the specified JSON'
-def getChartUsingJSON () :
-
-	oac = {"name":"dan at yahoo",
-		   "datetime":"12/26/1960, 03:00:00 PM",
-		   "location":"queens, ny, usa",
-		   "latitude":"40.7135078",
-		   "longitude":"-73.8283132",
-		   "countrycode":"us",
-		   "timezone":"-5",
-		   "altitude":0,
-		   "geonameid":5368361,
-		   "timezonestr":"America/New_York"};
-	chartURL = chartHost + '/createchart/'
-	print ('creating chart at URL:', chartURL, '\noac: ', json.dumps (oac))
-	data = None
-	try:
-		res   = requests.post (chartURL, json=oac)
-		res.raise_for_status ()
-		data  = res.json ()
-		chart = json.loads (data)
-		printChartFromDictionary (chart)
-	except requests.exceptions.RequestException as err:
-		print ("OOps: Something Else",err)
-	except requests.exceptions.HTTPError as errh:
-		print ("Http Error:", errh.response.text)
-	except requests.exceptions.ConnectionError as errc:
-		print ("Error Connecting:", errc.response.text)
-	except requests.exceptions.Timeout as errt:
-		print ("Timeout Error:",errt.response.text)
-	return data
-
 def main (argv) :
 	# setup valid options for command line
 	unixOpt   = "f:"
@@ -106,7 +74,6 @@ def main (argv) :
 	#filename = None
 	
 	match_data = {}
-
 	src_file   = './test/Joanne_Woodward.oac'
 	# extract commmand line arguments
 	
@@ -114,8 +81,7 @@ def main (argv) :
 	#	if arg in ("-f", "--file") :
 	#		filename = val
 
-	#match_data['src'] = getChart (src_file)
-	match_data['src'] = getChartUsingJSON ()
+	match_data['src'] = getChart (src_file)
 
 if __name__ == '__main__':
 	main(sys.argv[1:])

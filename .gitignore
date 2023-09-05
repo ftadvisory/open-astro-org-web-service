@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 gcloud-build-specific.zsh
 test/invokeService-specific.py
+openastro.package/.DS_Store
+.DS_Store

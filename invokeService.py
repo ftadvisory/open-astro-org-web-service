@@ -16,8 +16,9 @@ def dec2deg (dd) :
 	return str (d) + 'd ' + str (m) + "' " + str (s) + '"'
 
 
-#chartHost = '[GCP-CLOUD-RUN-URL]'
-chartHost = 'http://localhost:5000'
+
+chartHost = 'https://open-astro-web-service-ilhgu4omwq-uk.a.run.app';
+#chartHost = 'http://localhost:5000'
 
 def printChartFromDictionary (chart) :
 	print ("............ chart for ", chart['chartData']['name']," ............")
@@ -59,11 +60,9 @@ def getChart (filename) :
 		print ("Timeout Error:",errt.response.text)
 	return data
 
-# get the chart using the specified JSON'
 def getChartUsingJSON () :
-
 	oac = {"name":"dan at yahoo",
-		   "datetime":"12/26/1960, 03:00:00 PM",
+		   "datetime":"1960-12-26 15:00:00",
 		   "location":"queens, ny, usa",
 		   "latitude":"40.7135078",
 		   "longitude":"-73.8283132",
@@ -72,6 +71,7 @@ def getChartUsingJSON () :
 		   "altitude":0,
 		   "geonameid":5368361,
 		   "timezonestr":"America/New_York"};
+	
 	chartURL = chartHost + '/createchart/'
 	print ('creating chart at URL:', chartURL, '\noac: ', json.dumps (oac))
 	data = None
@@ -114,7 +114,7 @@ def main (argv) :
 	#	if arg in ("-f", "--file") :
 	#		filename = val
 
-	#match_data['src'] = getChart (src_file)
+	match_data['src'] = getChart (src_file)
 	match_data['src'] = getChartUsingJSON ()
 
 if __name__ == '__main__':
