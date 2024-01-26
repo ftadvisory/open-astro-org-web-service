@@ -1,7 +1,6 @@
 MANIFEST.in
 README.md
 setup.py
-openastro.egg-info/.DS_Store
 openastro.egg-info/PKG-INFO
 openastro.egg-info/SOURCES.txt
 openastro.egg-info/dependency_links.txt

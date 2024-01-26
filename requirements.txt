@@ -1,4 +1,4 @@
-Flask==2.1.2
-Flask-Cors==3.0.10
+Flask
+Flask-Cors
 pyswisseph==2.08.00-1
 pytz==2022.1

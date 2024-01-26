@@ -6,3 +6,4 @@ Home-page: http://www.openastro.org
 Author: Pelle van der Scheer
 Author-email: devel@openastro.org
 License: GPL
+Requires-Dist: pyswisseph
