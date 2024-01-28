@@ -30,18 +30,18 @@ Instructions to setup (assuming use of VS Code)
 - To build the python packages run:
 	- ./package-build.zsh
 
-- To deploy to docker and run (on port 5000)
+- To deploy to docker and run (on port 5050)
 	- ./docker-build.zsh
 
 - To test the docker deployment
-	- http://localhost:5000 
+	- http://localhost:5050 
 	- will return: "Web Service for OpenAstro v1.1.57"
 
-	- python ./test/invokeService.py 
+	- python ./invokeService.py 
 	- will return the chart for Joanne Woodward
 
-	- ./test/test-webservice-and-cleanup.zsh 
-	- will install needed packages, test the docker deployment and remove the packages
+	- ./test-webservice-and-cleanup.zsh 
+	- will install needed packages, test the docker deployment and remove the packages.  Note that this completely removes the relevant packages.  To reinstall them use "setDevEnv.zsh"
 
 - To deploy to GCP - after editing gcloud-build.zsh to point to the GCP project
 	- ./gloud-build.zsh
