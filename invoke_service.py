@@ -21,18 +21,6 @@ def main (argv) :
     #	print (str(err))
     #	print ('usage invokeService -f <input oac file name>')
     #	sys.exit(2)
-    oac = {"name":"dan at yahoo",
-           "datetime":"1990-3-15 15:00:00",
-           "location":"queens, ny, usa",
-           "latitude":"40.7135078",
-           "longitude":"-73.8283132",
-           "countrycode":"us",
-           "timezone":"-5.0",
-           "altitude":"0",
-           "geonameid":"5368361",
-           "timezonestr":"America/New_York"}
-    match_data_from_json = get_chart(CHART_HOST, oac)
-    print_chart(match_data_from_json)
     #filename = None
     src_file = './data/Joanne_Woodward.oac'
     # extract commmand line arguments  
