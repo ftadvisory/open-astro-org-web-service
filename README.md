@@ -6,7 +6,7 @@ The source applications were re-engineered to be deployed as a web service with 
 
 Consistent with the OpenAstro and Pysswisseph projects, this is published under the GNU Affero General Public License version 3.  See the LICENSE.txt file.
 
-Note that the original swisseph library is distributed under a dual licensing system: GNU Affero General Public License, or Swiss Ephemeris Professional License. For more information, see file libswe/LICENSE.
+Note that the original swisseph library is distributed under a dual licensing system: GNU Affero General Public License, or Swiss Ephemeris Professional License. For more information, see file libswe/LICENSE (https://github.com/astrorigin/swisseph/blob/696bda432298d482d27e67a0cf1238920301a7dd/LICENSE).
 
 Instructions to setup (assuming use of VS Code)
 
